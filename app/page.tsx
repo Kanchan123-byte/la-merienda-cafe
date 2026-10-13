@@ -295,6 +295,48 @@ export default function Home() {
         </section>
       </div>
 
+      
+{/* Events & Catering Section */}
+<section className="py-16 px-4 bg-white border-t border-gray-100" id="events">
+  <div className="max-w-3xl mx-auto text-center">
+    <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">
+      Events, Catering & Private Bookings
+    </h2>
+    <p className="text-gray-600 mb-8">
+      Planning a party, office gathering, or special event? Let La Merienda bring the sweet break with fresh crêpes, specialty coffees, and custom drink bars! Get in touch with us below.
+    </p>
+    
+    <form 
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert("Thank you! Your inquiry has been sent. We will get back to you shortly.");
+      }}
+      className="space-y-4 text-left bg-gray-50 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100"
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+          <input type="text" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9E0038] focus:outline-none" placeholder="Maria Schmidt" />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Phone / WhatsApp</label>
+          <input type="tel" required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9E0038] focus:outline-none" placeholder="+49 176 ..." />
+        </div>
+      </div>
+      
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Event Type & Details</label>
+        <textarea rows={4} required className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#9E0038] focus:outline-none" placeholder="Tell us about your date, guest count, and what you'd like to serve..."></textarea>
+      </div>
+
+      <button type="submit" className="w-full bg-[#9E0038] text-white font-semibold py-3 rounded-lg hover:bg-[#80002d] transition-colors">
+        Send Event Inquiry
+      </button>
+    </form>
+  </div>
+</section>
+
+
       {/* Footer & Legal Information */}
       <footer className="bg-white border-t border-gray-200 mt-20 py-8 px-6 text-center text-xs text-gray-500">
         <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
