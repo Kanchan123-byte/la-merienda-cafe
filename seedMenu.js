@@ -1,5 +1,5 @@
 const { initializeApp } = require("firebase/app");
-const { getFirestore, collection, addDoc } = require("firebase/firestore");
+const { getFirestore, collection, getDocs, deleteDoc, doc, addDoc } = require("firebase/firestore");
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyAiXPbX9s4mJv97R5y6PZNJLeq-Jl9rYEw",
@@ -14,7 +14,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const menuItems = [
-  // Specials & New (Drinks & Lattes updated with +0.70)
+  // Specials & New Drinks (Single online price)
   { name: "Mango Matcha Latte", category: "Specials & New", description: "Mango, matcha & milk.", price: 7.20, tags: ["Neu", "Matcha"], available: true },
   { name: "Mango Coconut Matcha", category: "Specials & New", description: "Mango, matcha & coconut water.", price: 7.20, tags: ["Neu", "Matcha"], available: true },
   { name: "Ube Matcha Latte", category: "Specials & New", description: "Ube, matcha & milk.", price: 7.20, tags: ["Neu", "Matcha"], available: true },
@@ -27,7 +27,7 @@ const menuItems = [
   { name: "Lavender Strawberry Lemonade", category: "Specials & New", description: "Strawberry, lavender, lemon & syrup.", price: 6.60, tags: ["Neu", "Refreshing"], available: true },
   { name: "Protein Iced Coffee", category: "Specials & New", description: "Coffee, milk & protein.", price: 7.20, tags: ["Neu", "Fitness"], available: true },
 
-  // Crêpes (Updated with +0.70)
+  // Crêpes (Single online price)
   { name: "Erdbeere, Banane, Nutella Crêpe", category: "Crêpes", description: "Warm, golden crêpe loaded with fresh strawberries, bananas, and rich Nutella.", price: 8.20, tags: ["Bestseller", "Sweet"], available: true },
   { name: "La Merienda Special (Zucker / Zimtzucker)", category: "Crêpes", description: "Classic choice of sugar or cinnamon sugar.", price: 4.60, tags: ["Special", "Classic"], available: true },
   { name: "Nutella Crêpe", category: "Crêpes", description: "Simple, warm crêpe filled with smooth, creamy Nutella.", price: 5.20, tags: ["Special", "Sweet"], available: true },
@@ -46,7 +46,7 @@ const menuItems = [
   { name: "Schinken und Käse Crêpe", category: "Crêpes", description: "Classic savory ham and melted cheese.", price: 6.50, tags: ["Herzhaft", "Classic"], available: true },
   { name: "Putenschinken und Käse Crêpe", category: "Crêpes", description: "Turkey ham and melted cheese.", price: 6.50, tags: ["Herzhaft", "Classic"], available: true },
 
-  // Coffee & Hot Drinks (Updated with +0.70)
+  // Coffee & Hot Drinks (Single online price)
   { name: "Jeder Kaffee + Crêpe Combo", category: "Coffee & Hot Drinks", description: "Any coffee paired with your choice of classic crêpe.", price: 7.60, tags: ["Combo", "Popular"], available: true },
   { name: "Espresso", category: "Coffee & Hot Drinks", description: "Strong, pure Italian espresso shot.", price: 3.30, tags: ["Hot", "Coffee"], available: true },
   { name: "Espresso Macchiato", category: "Coffee & Hot Drinks", description: "Espresso with a dash of milk foam.", price: 3.50, tags: ["Hot", "Coffee"], available: true },
@@ -62,7 +62,7 @@ const menuItems = [
   { name: "Matcha Latte", category: "Coffee & Hot Drinks", description: "Authentic green tea matcha with velvety milk.", price: 5.60, tags: ["Hot", "Matcha"], available: true },
   { name: "Masala Chai", category: "Coffee & Hot Drinks", description: "Traditional aromatic spiced chai tea.", price: 4.20, tags: ["Hot", "Tea"], available: true },
 
-  // Iced Drinks & Matchas (Updated with +0.70)
+  // Iced Drinks & Matchas (Single online price)
   { name: "Iced Coffee", category: "Iced Drinks & Matchas", description: "Chilled refreshing coffee over ice.", price: 5.60, tags: ["Iced", "Cold"], available: true },
   { name: "Iced Latte (Karamell / Hazelnut / Vanille)", category: "Iced Drinks & Matchas", description: "Smooth espresso and cold milk over ice with choice of syrup flavoring.", price: 5.20, tags: ["Iced", "Cold"], available: true },
   { name: "Iced Mochaccino", category: "Iced Drinks & Matchas", description: "Chilled espresso, chocolate, and milk over ice.", price: 5.40, tags: ["Iced", "Cold"], available: true },
@@ -73,7 +73,7 @@ const menuItems = [
   { name: "Iced Matcha - Himbeere", category: "Iced Drinks & Matchas", description: "Iced matcha layered with fresh raspberry puree.", price: 7.20, tags: ["Iced", "Matcha"], available: true },
   { name: "Iced Matcha - Blaubeere", category: "Iced Drinks & Matchas", description: "Iced matcha layered with fresh blueberry puree.", price: 7.20, tags: ["Iced", "Matcha"], available: true },
 
-  // Shakes (Updated with +0.70)
+  // Shakes (Single online price)
   { name: "Vanille Shake", category: "Shakes", description: "Creamy classic vanilla milkshake.", price: 5.60, tags: ["Shake", "Sweet"], available: true },
   { name: "Schoko Shake", category: "Shakes", description: "Rich chocolate milkshake.", price: 5.60, tags: ["Shake", "Sweet"], available: true },
   { name: "Cappuccino Shake", category: "Shakes", description: "Coffee-infused creamy milkshake.", price: 5.60, tags: ["Shake", "Coffee"], available: true },
@@ -86,7 +86,7 @@ const menuItems = [
   { name: "Orange Shake", category: "Shakes", description: "Citrusy orange blended shake.", price: 6.60, tags: ["Shake", "Fruit"], available: true },
   { name: "Almond Shake", category: "Shakes", description: "Nutty almond blended milkshake.", price: 6.60, tags: ["Shake", "Nuts"], available: true },
 
-  // Fresh & Fruity Drinks (Updated with +0.70)
+  // Fresh & Fruity Drinks (Single online price)
   { name: "Orangensaft frisch gepresst", category: "Fresh & Fruity Drinks", description: "100% freshly squeezed orange juice.", price: 6.20, tags: ["Fresh", "Vitamin"], available: true },
   { name: "Zitronenlimo hausgemacht", category: "Fresh & Fruity Drinks", description: "Handcrafted house lemonade.", price: 5.60, tags: ["Refreshing", "Cold"], available: true },
   { name: "Zitronenlimo - Ingwer", category: "Fresh & Fruity Drinks", description: "House lemonade infused with spicy ginger.", price: 6.20, tags: ["Refreshing", "Ginger"], available: true },
@@ -94,19 +94,27 @@ const menuItems = [
   { name: "Zitronenlimo - Himbeere", category: "Fresh & Fruity Drinks", description: "House lemonade infused with fresh raspberry.", price: 6.60, tags: ["Refreshing", "Fruit"], available: true }
 ];
 
-async function seedDatabase() {
+async function cleanAndSeedDatabase() {
   try {
-    console.log("Starting menu database price update (+0.70€)...");
+    console.log("Clearing old menu items from Firestore...");
+    const querySnapshot = await getDocs(collection(db, "menu"));
+    const deletePromises = querySnapshot.docs.map((document) => 
+      deleteDoc(doc(db, "menu", document.id))
+    );
+    await Promise.all(deletePromises);
+    console.log("Old menu cleared successfully.");
+
+    console.log("Seeding clean menu catalog with updated single prices...");
     for (const item of menuItems) {
       await addDoc(collection(db, "menu"), item);
-      console.log(`Updated price for: ${item.name} -> €${item.price.toFixed(2)}`);
+      console.log(`Added: ${item.name} -> €${item.price.toFixed(2)}`);
     }
-    console.log("All prices updated successfully!");
+    console.log("Database successfully cleaned and re-seeded!");
     process.exit(0);
   } catch (error) {
-    console.error("Error updating prices:", error);
+    console.error("Error updating database:", error);
     process.exit(1);
   }
 }
 
-seedDatabase();
+cleanAndSeedDatabase();
