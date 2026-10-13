@@ -3,7 +3,28 @@ import React, { useState, useEffect } from "react";
 import { collection, getDocs, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase/config";
 
-const fallbackMenu = [
+interface MenuItem {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  price: number;
+  tags: string[];
+  available: boolean;
+}
+
+interface CartItem extends MenuItem {
+  quantity: number;
+}
+
+interface SuccessOrder {
+  id: string;
+  name: string;
+  pickupTime: string;
+  total: number;
+}
+
+const fallbackMenu: MenuItem[] = [
   // Specials & New Drinks
   { id: "spec-mango-matcha", name: "Mango Matcha Latte", category: "Specials & New", description: "Mango, matcha & milk.", price: 6.50, tags: ["Neu", "Matcha"], available: true },
   { id: "spec-mango-coconut-matcha", name: "Mango Coconut Matcha", category: "Specials & New", description: "Mango, matcha & coconut water.", price: 6.50, tags: ["Neu", "Matcha"], available: true },
@@ -90,26 +111,26 @@ const fallbackMenu = [
 const categories = ["Specials & New", "Crêpes", "Coffee & Hot Drinks", "Iced Drinks & Matchas", "Shakes", "Fresh & Fruity Drinks"];
 
 export default function Home() {
-  const [menuItems, setMenuItems] = useState(fallbackMenu);
-  const [activeCategory, setActiveCategory] = useState("Specials & New");
-  const [cart, setCart] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [step, setStep] = useState("cart"); 
+  const [menuItems, setMenuItems] = useState<MenuItem[]>(fallbackMenu);
+  const [activeCategory, setActiveCategory] = useState<string>("Specials & New");
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
+  const [step, setStep] = useState<"cart" | "checkout" | "success">("cart"); 
   
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [pickupTime, setPickupTime] = useState("ASAP (~10 mins)");
-  const [successOrder, setSuccessOrder] = useState(null);
+  const [name, setName] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [pickupTime, setPickupTime] = useState<string>("ASAP (~10 mins)");
+  const [successOrder, setSuccessOrder] = useState<SuccessOrder | null>(null);
 
-  const [showCookieBanner, setShowCookieBanner] = useState(true);
-  const [legalModal, setLegalModal] = useState(null);
+  const [showCookieBanner, setShowCookieBanner] = useState<boolean>(true);
+  const [legalModal, setLegalModal] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchMenu() {
       try {
         const querySnapshot = await getDocs(collection(db, "menu"));
         if (!querySnapshot.empty) {
-          const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+          const items = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as MenuItem[];
           setMenuItems(items);
         }
       } catch (err) {
@@ -119,8 +140,8 @@ export default function Home() {
     fetchMenu();
   }, []);
 
-  const addToCart = (item) => {
-    setCart(prev => {
+  const addToCart = (item: MenuItem) => {
+    setCart((prev: CartItem[]) => {
       const existing = prev.find(i => i.id === item.id);
       if (existing) {
         return prev.map(i => i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i);
@@ -130,19 +151,19 @@ export default function Home() {
     setIsCartOpen(true);
   };
 
-  const updateQuantity = (id, delta) => {
-    setCart(prev => prev.map(item => {
+  const updateQuantity = (id: string, delta: number) => {
+    setCart((prev: CartItem[]) => prev.map(item => {
       if (item.id === id) {
         const newQty = item.quantity + delta;
         return newQty > 0 ? { ...item, quantity: newQty } : null;
       }
       return item;
-    }).filter(Boolean));
+    }).filter(Boolean) as CartItem[]);
   };
 
   const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-  const handleCheckout = async (e) => {
+  const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
     if (cart.length === 0) return;
 
