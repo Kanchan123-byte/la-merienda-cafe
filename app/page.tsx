@@ -246,6 +246,14 @@ export default function Home() {
           </div>
         </section>
 
+{/* Packaging & Convenience Notice */}
+<div className="bg-[#9E0038]/5 border-y border-[#9E0038]/10 py-3 px-4 text-center">
+  <p className="text-xs md:text-sm text-gray-700 max-w-2xl mx-auto flex items-center justify-center gap-2">
+    <span className="font-semibold text-[#9E0038]">💡 Online Ordering Notice:</span> 
+    Online prices include a +0.70€ packaging & convenience fee for fresh to-go containers and fast digital preparation.
+  </p>
+</div>
+
         {/* Menu Catalog with Category Tabs */}
         <section className="max-w-6xl mx-auto px-6 py-6">
           <h3 className="text-2xl font-extrabold mb-6 text-[#3D2314]">Our Menu Catalog</h3>
