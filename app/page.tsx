@@ -249,7 +249,7 @@ export default function Home() {
               </div>
               <div className="bg-[#F9F6F0] p-4 rounded-2xl">
                 <p className="font-extrabold text-[#3D2314] mb-1">⏰ Opening Hours</p>
-                <p>Mon – Sat: 10:00 – 20:00<br />Sunday: Closed</p>
+                <p>Mon – Sat: 10:00 – 20:00<br />Sundays & Public Holidays: Closed</p>
               </div>
               <div className="bg-[#F9F6F0] p-4 rounded-2xl flex flex-col justify-between">
                 <div>
@@ -419,7 +419,7 @@ export default function Home() {
                 <p><strong>La Merienda Café</strong><br />Inhaberin: Kanchan Jha<br />Rechnungsanschrift: Ollenhauerstraße 6<br />81737 München</p>
                 <p><strong>Standort / Café:</strong><br />Thomas-Dehler-Straße 10<br />81737 München (PEP Einkaufszentrum)</p>
                 <p><strong>Kontakt:</strong><br />E-Mail: info@lamerienda-cafe.de<br />Web: www.lamerienda-cafe.de</p>
-                <p><strong>Umsatzsteuer-ID:</strong><br />Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz wird bei Vorliegen ergänzt.</p>
+                <p><strong>Umsatzsteuer-ID:</strong><br />DE457471838</p>
               </div>
             ) : (
               <div className="text-xs text-gray-700 space-y-3 leading-relaxed">
