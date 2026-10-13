@@ -26,86 +26,83 @@ interface SuccessOrder {
 
 const fallbackMenu: MenuItem[] = [
   // Specials & New Drinks
-  { id: "spec-mango-matcha", name: "Mango Matcha Latte", category: "Specials & New", description: "Mango, matcha & milk.", price: 6.50, tags: ["Neu", "Matcha"], available: true },
-  { id: "spec-mango-coconut-matcha", name: "Mango Coconut Matcha", category: "Specials & New", description: "Mango, matcha & coconut water.", price: 6.50, tags: ["Neu", "Matcha"], available: true },
-  { id: "spec-ube-matcha", name: "Ube Matcha Latte", category: "Specials & New", description: "Ube, matcha & milk.", price: 6.50, tags: ["Neu", "Matcha"], available: true },
-  { id: "spec-dalgona", name: "Dalgona Coffee", category: "Specials & New", description: "Whipped coffee & milk.", price: 5.40, tags: ["Neu", "Coffee"], available: true },
-  { id: "spec-biscoff-latte", name: "Biscoff Latte", category: "Specials & New", description: "Lotus Biscoff, milk & espresso.", price: 5.50, tags: ["Neu", "Trending"], available: true },
-  { id: "spec-spanish-latte", name: "Spanish Latte", category: "Specials & New", description: "Condensed milk, espresso, milk & salt.", price: 5.40, tags: ["Neu", "Coffee"], available: true },
-  { id: "spec-raspberry-cheesecake", name: "Raspberry Cheesecake Latte", category: "Specials & New", description: "Cream cheese, raspberry, milk & espresso.", price: 5.90, tags: ["Neu", "Sweet"], available: true },
-  { id: "spec-dirty-matcha", name: "Dirty Matcha Latte", category: "Specials & New", description: "Mango, matcha & milk with espresso shot.", price: 5.90, tags: ["Neu", "Matcha"], available: true },
-  { id: "spec-lavender-lemonade", name: "Lavender Lemonade", category: "Specials & New", description: "Lavender, lemon & sugar syrup.", price: 5.50, tags: ["Neu", "Refreshing"], available: true },
-  { id: "spec-lavender-strawberry", name: "Lavender Strawberry Lemonade", category: "Specials & New", description: "Strawberry, lavender, lemon & syrup.", price: 5.90, tags: ["Neu", "Refreshing"], available: true },
-  { id: "spec-protein-iced-coffee", name: "Protein Iced Coffee", category: "Specials & New", description: "Coffee, milk & protein.", price: 6.50, tags: ["Neu", "Fitness"], available: true },
+  { id: "spec-mango-matcha", name: "Mango Matcha Latte", category: "Specials & New", description: "Mango, matcha & milk.", price: 7.20, tags: ["Neu", "Matcha"], available: true },
+  { id: "spec-mango-coconut-matcha", name: "Mango Coconut Matcha", category: "Specials & New", description: "Mango, matcha & coconut water.", price: 7.20, tags: ["Neu", "Matcha"], available: true },
+  { id: "spec-ube-matcha", name: "Ube Matcha Latte", category: "Specials & New", description: "Ube, matcha & milk.", price: 7.20, tags: ["Neu", "Matcha"], available: true },
+  { id: "spec-dalgona", name: "Dalgona Coffee", category: "Specials & New", description: "Whipped coffee & milk.", price: 6.10, tags: ["Neu", "Coffee"], available: true },
+  { id: "spec-biscoff-latte", name: "Biscoff Latte", category: "Specials & New", description: "Lotus Biscoff, milk & espresso.", price: 6.20, tags: ["Neu", "Trending"], available: true },
+  { id: "spec-spanish-latte", name: "Spanish Latte", category: "Specials & New", description: "Condensed milk, espresso, milk & salt.", price: 6.10, tags: ["Neu", "Coffee"], available: true },
+  { id: "spec-raspberry-cheesecake", name: "Raspberry Cheesecake Latte", category: "Specials & New", description: "Cream cheese, raspberry, milk & espresso.", price: 6.60, tags: ["Neu", "Sweet"], available: true },
+  { id: "spec-dirty-matcha", name: "Dirty Matcha Latte", category: "Specials & New", description: "Mango, matcha & milk with espresso shot.", price: 6.60, tags: ["Neu", "Matcha"], available: true },
+  { id: "spec-lavender-lemonade", name: "Lavender Lemonade", category: "Specials & New", description: "Lavender, lemon & sugar syrup.", price: 6.20, tags: ["Neu", "Refreshing"], available: true },
+  { id: "spec-lavender-strawberry", name: "Lavender Strawberry Lemonade", category: "Specials & New", description: "Strawberry, lavender, lemon & syrup.", price: 6.60, tags: ["Neu", "Refreshing"], available: true },
+  { id: "spec-protein-iced-coffee", name: "Protein Iced Coffee", category: "Specials & New", description: "Coffee, milk & protein.", price: 7.20, tags: ["Neu", "Fitness"], available: true },
 
   // Crêpes
-  { id: "bs-erdbeere-banane-nutella", name: "Erdbeere, Banane, Nutella Crêpe", category: "Crêpes", description: "Warm, golden crêpe loaded with fresh strawberries, bananas, and rich Nutella.", price: 7.50, tags: ["Bestseller", "Sweet"], available: true },
-  { id: "spec-la-merienda-special", name: "La Merienda Special (Zucker / Zimtzucker)", category: "Crêpes", description: "Classic choice of sugar or cinnamon sugar.", price: 3.90, tags: ["Special", "Classic"], available: true },
-  { id: "spec-nutella-special", name: "Nutella Crêpe", category: "Crêpes", description: "Simple, warm crêpe filled with smooth, creamy Nutella.", price: 4.50, tags: ["Special", "Sweet"], available: true },
-  { id: "spec-banana-nutella", name: "Banane & Nutella Crêpe", category: "Crêpes", description: "Fresh banana slices paired with rich Nutella inside a warm crêpe.", price: 5.50, tags: ["Special", "Sweet"], available: true },
-  { id: "bs-nutella-bueno", name: "Nutella Bueno Crêpe", category: "Crêpes", description: "Decadent crêpe filled with Nutella and crunchy Kinder Bueno pieces.", price: 6.50, tags: ["Bestseller", "Sweet"], available: true },
-  { id: "classic-basis", name: "Basis-Crêpe (ohne Belag)", category: "Crêpes", description: "Plain freshly baked warm crêpe.", price: 3.50, tags: ["Classic"], available: true },
-  { id: "classic-butter-zucker", name: "Butter & Zucker Crêpe", category: "Crêpes", description: "Melting butter and fine sugar.", price: 4.50, tags: ["Classic", "Sweet"], available: true },
-  { id: "classic-apfelmus", name: "Apfelmus Crêpe", category: "Crêpes", description: "Sweet and comforting homemade apple sauce filling.", price: 4.50, tags: ["Classic", "Fruit"], available: true },
-  { id: "classic-konfiniture", name: "Konfitüre nach Wahl", category: "Crêpes", description: "Choice of strawberry, raspberry, or apricot fruit jam.", price: 4.50, tags: ["Classic", "Fruit"], available: true },
-  { id: "nutella-mandel", name: "Nutella & Mandel Crêpe", category: "Crêpes", description: "Nutella with sliced almonds.", price: 5.50, tags: ["Nutella", "Nuts"], available: true },
-  { id: "nutella-oreo", name: "Nutella Oreo Crêpe", category: "Crêpes", description: "Nutella layered with crushed Oreo cookie crumbles.", price: 6.50, tags: ["Nutella", "Sweet"], available: true },
-  { id: "fruit-banane-apfelmus", name: "Banane & Apfelmus Crêpe", category: "Crêpes", description: "Banana slices blended with sweet apple sauce.", price: 5.50, tags: ["Fruit", "Sweet"], available: true },
-  { id: "fruit-apfelmus-nuesse", name: "Apfelmus & Nüsse Crêpe", category: "Crêpes", description: "Apple sauce combined with crunchy nuts.", price: 5.50, tags: ["Fruit", "Nuts"], available: true },
-  { id: "rohrzucker-butter-mandeln", name: "Rohrzucker, Butter & Mandeln", category: "Crêpes", description: "Raw cane sugar, melting butter, and crunchy almonds.", price: 5.90, tags: ["Sweet", "Special"], available: true },
-  { id: "savory-mozzarella", name: "Mozzarella, Rucola, Tomaten Crêpe", category: "Crêpes", description: "Fresh mozzarella, peppery arugula, and ripe tomatoes.", price: 6.50, tags: ["Herzhaft", "Vegetarian"], available: true },
-  { id: "savory-deluxe", name: "Frischkäse, Emmentaler, Tomaten, Mozzarella", category: "Crêpes", description: "Am beliebtesten! Cream cheese, Emmentaler, tomatoes, and mozzarella.", price: 7.50, tags: ["Herzhaft", "Popular"], available: true },
-  { id: "savory-spinat", name: "Blattspinat, Schafskäse, Grüner Pesto", category: "Crêpes", description: "Vegetarisch. Leaf spinach, feta cheese, and green pesto.", price: 7.50, tags: ["Herzhaft", "Vegetarian"], available: true },
-  { id: "savory-emmentaler", name: "Emmentaler Käse Crêpe", category: "Crêpes", description: "Vegetarisch. Melted Emmentaler cheese.", price: 5.00, tags: ["Herzhaft", "Vegetarian"], available: true },
-  { id: "savory-schinken", name: "Schinken und Käse Crêpe", category: "Crêpes", description: "Classic savory ham and melted cheese.", price: 5.80, tags: ["Herzhaft", "Classic"], available: true },
-  { id: "savory-putenschinken", name: "Putenschinken und Käse Crêpe", category: "Crêpes", description: "Turkey ham and melted cheese.", price: 5.80, tags: ["Herzhaft", "Classic"], available: true },
+  { id: "bs-erdbeere-banane-nutella", name: "Erdbeere, Banane, Nutella Crêpe", category: "Crêpes", description: "Warm, golden crêpe loaded with fresh strawberries, bananas, and rich Nutella.", price: 8.20, tags: ["Bestseller", "Sweet"], available: true },
+  { id: "spec-la-merienda-special", name: "La Merienda Special (Zucker / Zimtzucker)", category: "Crêpes", description: "Classic choice of sugar or cinnamon sugar.", price: 4.60, tags: ["Special", "Classic"], available: true },
+  { id: "spec-nutella-special", name: "Nutella Crêpe", category: "Crêpes", description: "Simple, warm crêpe filled with smooth, creamy Nutella.", price: 5.20, tags: ["Special", "Sweet"], available: true },
+  { id: "spec-banana-nutella", name: "Banane & Nutella Crêpe", category: "Crêpes", description: "Fresh banana slices paired with rich Nutella inside a warm crêpe.", price: 6.20, tags: ["Special", "Sweet"], available: true },
+  { id: "bs-nutella-bueno", name: "Nutella Bueno Crêpe", category: "Crêpes", description: "Decadent crêpe filled with Nutella and crunchy Kinder Bueno pieces.", price: 7.20, tags: ["Bestseller", "Sweet"], available: true },
+  { id: "classic-basis", name: "Basis-Crêpe (ohne Belag)", category: "Crêpes", description: "Plain freshly baked warm crêpe.", price: 4.20, tags: ["Classic"], available: true },
+  { id: "classic-butter-zucker", name: "Butter & Zucker Crêpe", category: "Crêpes", description: "Melting butter and fine sugar.", price: 5.20, tags: ["Classic", "Sweet"], available: true },
+  { id: "classic-apfelmus", name: "Apfelmus Crêpe", category: "Crêpes", description: "Sweet and comforting homemade apple sauce filling.", price: 5.20, tags: ["Classic", "Fruit"], available: true },
+  { id: "classic-konfiniture", name: "Konfitüre nach Wahl", category: "Crêpes", description: "Choice of strawberry, raspberry, or apricot fruit jam.", price: 5.20, tags: ["Classic", "Fruit"], available: true },
+  { id: "nutella-mandel", name: "Nutella & Mandel Crêpe", category: "Crêpes", description: "Nutella with sliced almonds.", price: 6.20, tags: ["Nutella", "Nuts"], available: true },
+  { id: "nutella-oreo", name: "Nutella Oreo Crêpe", category: "Crêpes", description: "Nutella layered with crushed Oreo cookie crumbles.", price: 7.20, tags: ["Nutella", "Sweet"], available: true },
+  { id: "savory-mozzarella", name: "Mozzarella, Rucola, Tomaten Crêpe", category: "Crêpes", description: "Fresh mozzarella, peppery arugula, and ripe tomatoes.", price: 7.20, tags: ["Herzhaft", "Vegetarian"], available: true },
+  { id: "savory-deluxe", name: "Frischkäse, Emmentaler, Tomaten, Mozzarella", category: "Crêpes", description: "Am beliebtesten! Cream cheese, Emmentaler, tomatoes, and mozzarella.", price: 8.20, tags: ["Herzhaft", "Popular"], available: true },
+  { id: "savory-spinat", name: "Blattspinat, Schafskäse, Grüner Pesto", category: "Crêpes", description: "Vegetarisch. Leaf spinach, feta cheese, and green pesto.", price: 8.20, tags: ["Herzhaft", "Vegetarian"], available: true },
+  { id: "savory-emmentaler", name: "Emmentaler Käse Crêpe", category: "Crêpes", description: "Vegetarisch. Melted Emmentaler cheese.", price: 5.70, tags: ["Herzhaft", "Vegetarian"], available: true },
+  { id: "savory-schinken", name: "Schinken und Käse Crêpe", category: "Crêpes", description: "Classic savory ham and melted cheese.", price: 6.50, tags: ["Herzhaft", "Classic"], available: true },
+  { id: "savory-putenschinken", name: "Putenschinken und Käse Crêpe", category: "Crêpes", description: "Turkey ham and melted cheese.", price: 6.50, tags: ["Herzhaft", "Classic"], available: true },
 
   // Coffee & Hot Drinks
-  { id: "combo-coffee-crepe", name: "Jeder Kaffee + Crêpe Combo", category: "Coffee & Hot Drinks", description: "Any coffee paired with your choice of classic crêpe.", price: 6.90, tags: ["Combo", "Popular"], available: true },
-  { id: "hot-espresso", name: "Espresso", category: "Coffee & Hot Drinks", description: "Strong, pure Italian espresso shot.", price: 2.60, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-espresso-macchiato", name: "Espresso Macchiato", category: "Coffee & Hot Drinks", description: "Espresso with a dash of milk foam.", price: 2.80, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-cafe-creme", name: "Café Crème", category: "Coffee & Hot Drinks", description: "Smooth classic café crème.", price: 2.90, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-milchkaffee", name: "Milchkaffee", category: "Coffee & Hot Drinks", description: "Classic European milk coffee.", price: 3.50, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-americano", name: "Americano", category: "Coffee & Hot Drinks", description: "Rich espresso with hot water.", price: 3.50, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-cappuccino", name: "Cappuccino", category: "Coffee & Hot Drinks", description: "Espresso with velvety frothed milk foam.", price: 3.60, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-latte-macchiato", name: "Latte Macchiato", category: "Coffee & Hot Drinks", description: "Layered steamed milk and espresso.", price: 3.80, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-moccaccino", name: "Moccaccino", category: "Coffee & Hot Drinks", description: "Espresso combined with rich chocolate and steamed milk.", price: 3.80, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-flat-white", name: "Flat White", category: "Coffee & Hot Drinks", description: "Double shot of espresso with microfoam milk.", price: 4.00, tags: ["Hot", "Coffee"], available: true },
-  { id: "hot-schoko", name: "Schoko (Schwarz / Weiß)", category: "Coffee & Hot Drinks", description: "Rich hot chocolate (dark or white).", price: 3.90, tags: ["Hot", "Chocolate"], available: true },
-  { id: "hot-chai-latte", name: "Chai Latte", category: "Coffee & Hot Drinks", description: "Spiced black tea with steamed milk.", price: 3.90, tags: ["Hot", "Tea"], available: true },
-  { id: "hot-matcha-latte", name: "Matcha Latte", category: "Coffee & Hot Drinks", description: "Authentic green tea matcha with velvety milk.", price: 4.90, tags: ["Hot", "Matcha"], available: true },
-  { id: "hot-masala-chai", name: "Masala Chai", category: "Coffee & Hot Drinks", description: "Traditional aromatic spiced chai tea.", price: 3.50, tags: ["Hot", "Tea"], available: true },
+  { id: "combo-coffee-crepe", name: "Jeder Kaffee + Crêpe Combo", category: "Coffee & Hot Drinks", description: "Any coffee paired with your choice of classic crêpe.", price: 7.60, tags: ["Combo", "Popular"], available: true },
+  { id: "hot-espresso", name: "Espresso", category: "Coffee & Hot Drinks", description: "Strong, pure Italian espresso shot.", price: 3.30, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-espresso-macchiato", name: "Espresso Macchiato", category: "Coffee & Hot Drinks", description: "Espresso with a dash of milk foam.", price: 3.50, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-cafe-creme", name: "Café Crème", category: "Coffee & Hot Drinks", description: "Smooth classic café crème.", price: 3.60, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-milchkaffee", name: "Milchkaffee", category: "Coffee & Hot Drinks", description: "Classic European milk coffee.", price: 4.20, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-americano", name: "Americano", category: "Coffee & Hot Drinks", description: "Rich espresso with hot water.", price: 4.20, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-cappuccino", name: "Cappuccino", category: "Coffee & Hot Drinks", description: "Espresso with velvety frothed milk foam.", price: 4.30, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-latte-macchiato", name: "Latte Macchiato", category: "Coffee & Hot Drinks", description: "Layered steamed milk and espresso.", price: 4.50, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-moccaccino", name: "Moccaccino", category: "Coffee & Hot Drinks", description: "Espresso combined with rich chocolate and steamed milk.", price: 4.50, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-flat-white", name: "Flat White", category: "Coffee & Hot Drinks", description: "Double shot of espresso with microfoam milk.", price: 4.70, tags: ["Hot", "Coffee"], available: true },
+  { id: "hot-schoko", name: "Schoko (Schwarz / Weiß)", category: "Coffee & Hot Drinks", description: "Rich hot chocolate (dark or white).", price: 4.60, tags: ["Hot", "Chocolate"], available: true },
+  { id: "hot-chai-latte", name: "Chai Latte", category: "Coffee & Hot Drinks", description: "Spiced black tea with steamed milk.", price: 4.60, tags: ["Hot", "Tea"], available: true },
+  { id: "hot-matcha-latte", name: "Matcha Latte", category: "Coffee & Hot Drinks", description: "Authentic green tea matcha with velvety milk.", price: 5.60, tags: ["Hot", "Matcha"], available: true },
+  { id: "hot-masala-chai", name: "Masala Chai", category: "Coffee & Hot Drinks", description: "Traditional aromatic spiced chai tea.", price: 4.20, tags: ["Hot", "Tea"], available: true },
 
   // Iced Drinks & Matchas
-  { id: "iced-coffee", name: "Iced Coffee", category: "Iced Drinks & Matchas", description: "Chilled refreshing coffee over ice.", price: 4.90, tags: ["Iced", "Cold"], available: true },
-  { id: "iced-latte", name: "Iced Latte (Karamell / Hazelnut / Vanille)", category: "Iced Drinks & Matchas", description: "Smooth espresso and cold milk over ice with choice of syrup flavoring.", price: 4.50, tags: ["Iced", "Cold"], available: true },
-  { id: "iced-mochaccino", name: "Iced Mochaccino", category: "Iced Drinks & Matchas", description: "Chilled espresso, chocolate, and milk over ice.", price: 4.70, tags: ["Iced", "Cold"], available: true },
-  { id: "iced-chai", name: "Iced Chai", category: "Iced Drinks & Matchas", description: "Chilled spiced chai tea over ice.", price: 4.70, tags: ["Iced", "Cold"], available: true },
-  { id: "iced-schoko", name: "Iced Schoko (S/W)", category: "Iced Drinks & Matchas", description: "Chilled dark or white chocolate over ice.", price: 4.70, tags: ["Iced", "Cold"], available: true },
-  { id: "iced-matcha", name: "Iced Matcha", category: "Iced Drinks & Matchas", description: "Vibrant green tea matcha served over ice.", price: 5.50, tags: ["Iced", "Matcha"], available: true },
-  { id: "iced-berry-matcha-erdbeere", name: "Iced Matcha - Erdbeere", category: "Iced Drinks & Matchas", description: "Iced matcha layered with fresh strawberry puree.", price: 6.50, tags: ["Iced", "Matcha"], available: true },
-  { id: "iced-berry-matcha-himbeere", name: "Iced Matcha - Himbeere", category: "Iced Drinks & Matchas", description: "Iced matcha layered with fresh raspberry puree.", price: 6.50, tags: ["Iced", "Matcha"], available: true },
-  { id: "iced-berry-matcha-blaubeere", name: "Iced Matcha - Blaubeere", category: "Iced Drinks & Matchas", description: "Iced matcha layered with fresh blueberry puree.", price: 6.50, tags: ["Iced", "Matcha"], available: true },
+  { id: "iced-coffee", name: "Iced Coffee", category: "Iced Drinks & Matchas", description: "Chilled refreshing coffee over ice.", price: 5.60, tags: ["Iced", "Cold"], available: true },
+  { id: "iced-latte", name: "Iced Latte (Karamell / Hazelnut / Vanille)", category: "Iced Drinks & Matchas", description: "Smooth espresso and cold milk over ice with choice of syrup flavoring.", price: 5.20, tags: ["Iced", "Cold"], available: true },
+  { id: "iced-mochaccino", name: "Iced Mochaccino", category: "Iced Drinks & Matchas", description: "Chilled espresso, chocolate, and milk over ice.", price: 5.40, tags: ["Iced", "Cold"], available: true },
+  { id: "iced-chai", name: "Iced Chai", category: "Iced Drinks & Matchas", description: "Chilled spiced chai tea over ice.", price: 5.40, tags: ["Iced", "Cold"], available: true },
+  { id: "iced-schoko", name: "Iced Schoko (S/W)", category: "Iced Drinks & Matchas", description: "Chilled dark or white chocolate over ice.", price: 5.40, tags: ["Iced", "Cold"], available: true },
+  { id: "iced-matcha", name: "Iced Matcha", category: "Iced Drinks & Matchas", description: "Vibrant green tea matcha served over ice.", price: 6.20, tags: ["Iced", "Matcha"], available: true },
+  { id: "iced-berry-matcha-erdbeere", name: "Iced Matcha - Erdbeere", category: "Iced Drinks & Matchas", description: "Iced matcha layered with fresh strawberry puree.", price: 7.20, tags: ["Iced", "Matcha"], available: true },
+  { id: "iced-berry-matcha-himbeere", name: "Iced Matcha - Himbeere", category: "Iced Drinks & Matchas", description: "Iced matcha layered with fresh raspberry puree.", price: 7.20, tags: ["Iced", "Matcha"], available: true },
+  { id: "iced-berry-matcha-blaubeere", name: "Iced Matcha - Blaubeere", category: "Iced Drinks & Matchas", description: "Iced matcha layered with fresh blueberry puree.", price: 7.20, tags: ["Iced", "Matcha"], available: true },
 
   // Shakes
-  { id: "shake-vanille", name: "Vanille Shake", category: "Shakes", description: "Creamy classic vanilla milkshake.", price: 4.90, tags: ["Shake", "Sweet"], available: true },
-  { id: "shake-schoko", name: "Schoko Shake", category: "Shakes", description: "Rich chocolate milkshake.", price: 4.90, tags: ["Shake", "Sweet"], available: true },
-  { id: "shake-cappuccino", name: "Cappuccino Shake", category: "Shakes", description: "Coffee-infused creamy milkshake.", price: 4.90, tags: ["Shake", "Coffee"], available: true },
-  { id: "shake-joghurt", name: "Joghurt Shake", category: "Shakes", description: "Refreshing yogurt-based creamy shake.", price: 4.90, tags: ["Shake", "Fresh"], available: true },
-  { id: "shake-banane", name: "Banane Shake", category: "Shakes", description: "Creamy fresh banana milkshake.", price: 5.40, tags: ["Shake", "Fruit"], available: true },
-  { id: "shake-schoko-banane", name: "Schoko-Banane Shake", category: "Shakes", description: "Chocolate and fresh banana combination shake.", price: 5.90, tags: ["Shake", "Sweet"], available: true },
-  { id: "shake-oreo", name: "Oreo Shake", category: "Shakes", description: "Oreo cookie crumbles blended into a thick shake.", price: 5.90, tags: ["Shake", "Sweet"], available: true },
-  { id: "shake-berry", name: "Berry Shake", category: "Shakes", description: "Blended mixed berry milkshake.", price: 5.90, tags: ["Shake", "Fruit"], available: true },
-  { id: "shake-erdbeere", name: "Erdbeere Shake", category: "Shakes", description: "Fresh strawberry blended milkshake.", price: 5.90, tags: ["Shake", "Fruit"], available: true },
-  { id: "shake-orange", name: "Orange Shake", category: "Shakes", description: "Citrusy orange blended shake.", price: 5.90, tags: ["Shake", "Fruit"], available: true },
-  { id: "shake-almond", name: "Almond Shake", category: "Shakes", description: "Nutty almond blended milkshake.", price: 5.90, tags: ["Shake", "Nuts"], available: true },
+  { id: "shake-vanille", name: "Vanille Shake", category: "Shakes", description: "Creamy classic vanilla milkshake.", price: 5.60, tags: ["Shake", "Sweet"], available: true },
+  { id: "shake-schoko", name: "Schoko Shake", category: "Shakes", description: "Rich chocolate milkshake.", price: 5.60, tags: ["Shake", "Sweet"], available: true },
+  { id: "shake-cappuccino", name: "Cappuccino Shake", category: "Shakes", description: "Coffee-infused creamy milkshake.", price: 5.60, tags: ["Shake", "Coffee"], available: true },
+  { id: "shake-joghurt", name: "Joghurt Shake", category: "Shakes", description: "Refreshing yogurt-based creamy shake.", price: 5.60, tags: ["Shake", "Fresh"], available: true },
+  { id: "shake-banane", name: "Banane Shake", category: "Shakes", description: "Creamy fresh banana milkshake.", price: 6.10, tags: ["Shake", "Fruit"], available: true },
+  { id: "shake-schoko-banane", name: "Schoko-Banane Shake", category: "Shakes", description: "Chocolate and fresh banana combination shake.", price: 6.60, tags: ["Shake", "Sweet"], available: true },
+  { id: "shake-oreo", name: "Oreo Shake", category: "Shakes", description: "Oreo cookie crumbles blended into a thick shake.", price: 6.60, tags: ["Shake", "Sweet"], available: true },
+  { id: "shake-berry", name: "Berry Shake", category: "Shakes", description: "Blended mixed berry milkshake.", price: 6.60, tags: ["Shake", "Fruit"], available: true },
+  { id: "shake-erdbeere", name: "Erdbeere Shake", category: "Shakes", description: "Fresh strawberry blended milkshake.", price: 6.60, tags: ["Shake", "Fruit"], available: true },
+  { id: "shake-orange", name: "Orange Shake", category: "Shakes", description: "Citrusy orange blended shake.", price: 6.60, tags: ["Shake", "Fruit"], available: true },
+  { id: "shake-almond", name: "Almond Shake", category: "Shakes", description: "Nutty almond blended milkshake.", price: 6.60, tags: ["Shake", "Nuts"], available: true },
 
   // Fresh & Fruity Drinks
-  { id: "fresh-orangensaft", name: "Orangensaft frisch gepresst", category: "Fresh & Fruity Drinks", description: "100% freshly squeezed orange juice.", price: 5.50, tags: ["Fresh", "Vitamin"], available: true },
-  { id: "fresh-zitronenlimo", name: "Zitronenlimo hausgemacht", category: "Fresh & Fruity Drinks", description: "Handcrafted house lemonade.", price: 4.90, tags: ["Refreshing", "Cold"], available: true },
-  { id: "lemonade-ingwer", name: "Zitronenlimo - Ingwer", category: "Fresh & Fruity Drinks", description: "House lemonade infused with spicy ginger.", price: 5.50, tags: ["Refreshing", "Ginger"], available: true },
-  { id: "lemonade-erdbeere", name: "Zitronenlimo - Erdbeere", category: "Fresh & Fruity Drinks", description: "House lemonade infused with fresh strawberry.", price: 5.90, tags: ["Refreshing", "Fruit"], available: true },
-  { id: "lemonade-himbeere", name: "Zitronenlimo - Himbeere", category: "Fresh & Fruity Drinks", description: "House lemonade infused with fresh raspberry.", price: 5.90, tags: ["Refreshing", "Fruit"], available: true }
+  { id: "fresh-orangensaft", name: "Orangensaft frisch gepresst", category: "Fresh & Fruity Drinks", description: "100% freshly squeezed orange juice.", price: 6.20, tags: ["Fresh", "Vitamin"], available: true },
+  { id: "fresh-zitronenlimo", name: "Zitronenlimo hausgemacht", category: "Fresh & Fruity Drinks", description: "Handcrafted house lemonade.", price: 5.60, tags: ["Refreshing", "Cold"], available: true },
+  { id: "lemonade-ingwer", name: "Zitronenlimo - Ingwer", category: "Fresh & Fruity Drinks", description: "House lemonade infused with spicy ginger.", price: 6.20, tags: ["Refreshing", "Ginger"], available: true },
+  { id: "lemonade-erdbeere", name: "Zitronenlimo - Erdbeere", category: "Fresh & Fruity Drinks", description: "House lemonade infused with fresh strawberry.", price: 6.60, tags: ["Refreshing", "Fruit"], available: true },
+  { id: "lemonade-himbeere", name: "Zitronenlimo - Himbeere", category: "Fresh & Fruity Drinks", description: "House lemonade infused with fresh raspberry.", price: 6.60, tags: ["Refreshing", "Fruit"], available: true }
 ];
 
 const categories = ["Specials & New", "Crêpes", "Coffee & Hot Drinks", "Iced Drinks & Matchas", "Shakes", "Fresh & Fruity Drinks"];
@@ -194,11 +191,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F9F6F0] text-[#1A1A1A] flex flex-col justify-between">
       <div>
-        {/* Red Header with La Merienda Branding on the Top Left */}
+        {/* Red Header */}
         <header className="bg-[#9E0038] shadow-md sticky top-0 z-40 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
             <h1 className="text-white font-black text-lg tracking-wider">LA MERIENDA</h1>
-            <span className="text-white/60 text-xs hidden md:inline">| Thomas-Dehler-Straße 10, München (PEP Mall)</span>
+            <span className="text-white/60 text-xs hidden md:inline">| PEP Mall München</span>
           </div>
           
           <div className="flex items-center gap-3">
@@ -223,26 +220,52 @@ export default function Home() {
           </div>
         </header>
 
-        {/* Hero Section with Centered Logo */}
+        {/* Hero Section with Official Logo & Tagline */}
         <section className="bg-[#9E0038] text-white py-12 px-6 text-center border-t border-white/10">
           <div className="max-w-md mx-auto flex flex-col items-center">
-            <img src="/logo.png" alt="La Merienda Logo" className="h-32 w-auto object-contain mb-4 drop-shadow-md bg-white p-3 rounded-2xl" />
+            <img src="/Logo La Merienda.png" alt="La Merienda Logo" className="h-28 w-auto object-contain mb-4 drop-shadow-md bg-white p-3 rounded-2xl" />
             <p className="text-sm opacity-95 max-w-xl mx-auto font-medium">
               Order warm crêpes, specialty coffees, and trending drinks online for quick counter pickup at PEP Mall Neuperlach!
             </p>
           </div>
         </section>
 
-        {/* Expanded About Section */}
+        {/* Expanded About & Info Section (Address, Hours, Instagram) */}
         <section className="max-w-4xl mx-auto px-6 py-12 text-center">
-          <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-100">
+          <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-100 mb-8">
             <h3 className="text-2xl font-black text-[#3D2314] mb-4">Welcome to La Merienda! ☕</h3>
             <p className="text-gray-700 leading-relaxed text-sm sm:text-base mb-4">
               Situated inside the vibrant PEP Einkaufszentrum (PEP Mall Neuperlach), <strong>La Merienda</strong> brings a modern, fast-casual twist to the traditional Spanish afternoon snack break (<em>la merienda</em>). Whether you are taking a well-deserved shopping break, commuting, or meeting friends and family, we are here to provide quick, high-quality indulgences designed to brighten your day.
             </p>
-            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-              From freshly prepared sweet crêpes with rich Nutella and fresh strawberries to savory artisanal options like our popular mozzarella, arugula, and tomato wraps, everything is made fresh to order. Pair your treat with our authentic Costa Coffee specialty lattes, vibrant Ube and Biscoff lattes, signature matcha drinks, or handcrafted house lemonades. Built around the ethos <span className="font-bold text-[#9E0038]">“Fresh. Fast. Feel-good”</span>, we combine high-efficiency service with elevated presentation to transform your day.
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base mb-6">
+              From freshly prepared sweet crêpes with rich Nutella and fresh strawberries to savory options, specialty Costa Coffee lattes, Ube/Biscoff lattes, and handcrafted lemonades. <span className="font-bold text-[#9E0038]">“Fresh. Fast. Feel-good”</span>.
             </p>
+
+            {/* Address, Hours, & Instagram Card */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 border-t border-gray-100 text-left text-xs sm:text-sm text-gray-700">
+              <div className="bg-[#F9F6F0] p-4 rounded-2xl">
+                <p className="font-extrabold text-[#3D2314] mb-1">📍 Address</p>
+                <p>Thomas-Dehler-Straße 10<br />81737 München (PEP Mall)</p>
+              </div>
+              <div className="bg-[#F9F6F0] p-4 rounded-2xl">
+                <p className="font-extrabold text-[#3D2314] mb-1">⏰ Opening Hours</p>
+                <p>Mon – Sat: 10:00 – 20:00<br />Sunday: Closed</p>
+              </div>
+              <div className="bg-[#F9F6F0] p-4 rounded-2xl flex flex-col justify-between">
+                <div>
+                  <p className="font-extrabold text-[#3D2314] mb-1">📸 Instagram</p>
+                  <p className="text-gray-600">Follow our fresh creations & updates!</p>
+                </div>
+                <a 
+                  href="https://www.instagram.com/la.merienda_cafe" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-[#9E0038] font-bold hover:underline"
+                >
+                  @la.merienda_cafe ➔
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
