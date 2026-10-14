@@ -418,7 +418,7 @@ export default function Home() {
                 <p className="font-bold text-sm">Angaben gemäß § 5 TMG:</p>
                 <p><strong>La Merienda Café</strong><br />Inhaberin: Kanchan Jha<br />Rechnungsanschrift: Ollenhauerstraße 6<br />81737 München</p>
                 <p><strong>Standort / Café:</strong><br />Thomas-Dehler-Straße 10<br />81737 München (PEP Einkaufszentrum)</p>
-                <p><strong>Kontakt:</strong><br />E-Mail: info@lamerienda-cafe.de<br />Web: www.lamerienda-cafe.de</p>
+                <p><strong>Kontakt:</strong><br />E-Mail: info@la-merienda-cafe.com<br />Web: <a href="https://www.la-merienda-cafe.com/" target="_blank" rel="noopener noreferrer" className="text-[#9E0038] underline">https://www.la-merienda-cafe.com/</a></p>
                 <p><strong>Umsatzsteuer-ID:</strong><br />DE457471838</p>
               </div>
             ) : (
