@@ -4,8 +4,6 @@ import { collection, getDocs, addDoc, serverTimestamp } from "firebase/firestore
 import { db } from "./firebase/config";
 import { sendOrderEmail } from './actions';
 
-
-
 interface MenuItem {
   id: string;
   name: string;
@@ -167,6 +165,7 @@ export default function Home() {
     e.preventDefault();
     if (cart.length === 0) return;
 
+    let orderId = "";
     try {
       const orderRef = await addDoc(collection(db, "orders"), {
         customerName: name,
@@ -178,25 +177,29 @@ export default function Home() {
         status: "Received",
         createdAt: serverTimestamp(),
       });
-      setSuccessOrder({ id: orderRef.id, name, pickupTime, total: subtotal });
-      setCart([]);
-      setStep("success");
+      orderId = orderRef.id;
     } catch (err) {
-      const fakeOrderId = "LM-" + Math.floor(1000 + Math.random() * 9000);
-      setSuccessOrder({ id: fakeOrderId, name, pickupTime, total: subtotal });
-      setCart([]);
-      setStep("success");
+      orderId = "LM-" + Math.floor(1000 + Math.random() * 9000);
     }
+
+    // Trigger Resend Email Notification via Server Action
+    try {
+      await sendOrderEmail({
+        orderId: orderId,
+        total: subtotal.toFixed(2),
+        items: cart.map(i => `${i.name} (x${i.quantity})`).join(', '),
+        customerName: name,
+        customerEmail: "jhakankan3001@gmail.com",
+        customerPhone: phone
+      });
+    } catch (emailErr) {
+      console.error("Failed to trigger email notification:", emailErr);
+    }
+
+    setSuccessOrder({ id: orderId, name, pickupTime, total: subtotal });
+    setCart([]);
+    setStep("success");
   };
-  
-  await sendOrderEmail({
-    orderId: orderId,
-    total: totalAmount.toFixed(2),
-    items: cart.map(i => `${i.name} (x${i.quantity})`).join(', '),
-    customerName: name,
-    customerEmail: email,
-    customerPhone: phone
-  });
   
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
