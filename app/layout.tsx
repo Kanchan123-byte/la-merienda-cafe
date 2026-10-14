@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata = {
   title: "La Merienda | Fresh Crêpes & Specialty Coffee",
   description: "Order fresh crêpes, specialty coffees, and trending drinks online for quick counter pickup at PEP Mall Munich.",
