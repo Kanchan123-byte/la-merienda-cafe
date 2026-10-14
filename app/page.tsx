@@ -188,15 +188,15 @@ export default function Home() {
       setStep("success");
     }
   };
-  const handleCheckout = async () => {
-    // ... your existing code ...
-    
-    await sendOrderEmail({
-      orderId: orderId,
-      total: total.toString(),
-      items: cart.map(i => `${i.name} (x${i.quantity})`).join(', ')
-    });
-  };
+  
+  await sendOrderEmail({
+    orderId: orderId,
+    total: totalAmount.toFixed(2),
+    items: cart.map(i => `${i.name} (x${i.quantity})`).join(', '),
+    customerName: name,
+    customerEmail: email,
+    customerPhone: phone
+  });
   
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
