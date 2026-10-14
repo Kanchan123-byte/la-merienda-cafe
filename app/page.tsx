@@ -47,52 +47,64 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F9F6F0] text-[#1A1A1A] flex flex-col justify-between">
       <div>
-        {/* Navigation Bar */}
-        <header className="bg-[#9E0038] shadow-md sticky top-0 z-40 px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <h1 className="text-white font-black text-lg tracking-wider">LA MERIENDA</h1>
-            <span className="text-white/60 text-xs hidden md:inline">| PEP Mall München</span>
+        {/* Navigation Bar with Official Logo */}
+        <header className="bg-[#9E0038] shadow-md sticky top-0 z-40 px-6 py-3 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <img src="/Logo La Merienda.png" alt="La Merienda Logo" className="h-9 w-auto bg-white p-1 rounded-lg" />
+            <span className="text-white font-black text-sm md:text-base tracking-wider hidden sm:inline">LA MERIENDA</span>
           </div>
           <a 
             href="https://www.ubereats.com/de/store/la-merienda/S2fk516BWqCgS9XeyHb6Nw?srsltid=AU7gw4W0-1HEkjHBtzf66pM020AZ1m54te-g_sQPCg8C6n7zQVV0po9i" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-white text-green-700 px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-2 hover:bg-gray-100 transition-colors shadow-sm"
+            className="bg-white text-green-700 px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-2 hover:bg-gray-100 transition-colors shadow-sm cursor-pointer"
           >
             <span>🛵 Order on Uber Eats</span>
           </a>
         </header>
 
-        {/* Hero Section */}
-        <section className="bg-[#9E0038] text-white py-14 px-6 text-center border-t border-white/10">
-          <div className="max-w-md mx-auto flex flex-col items-center">
-            <img src="/Logo La Merienda.png" alt="La Merienda Logo" className="h-28 w-auto object-contain mb-4 drop-shadow-md bg-white p-3 rounded-2xl" />
-            <p className="text-base opacity-95 max-w-xl mx-auto font-medium leading-relaxed">
-              A modern twist on the traditional Spanish afternoon snack break. Fresh crêpes, specialty coffees, and trending drinks at PEP Mall Neuperlach!
+        {/* Hero Section with Kiosk Background Image */}
+        <section className="relative text-white py-24 sm:py-32 px-6 text-center overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="/kiosk-bg.jpg" 
+              alt="La Merienda Kiosk at PEP Mall" 
+              className="w-full h-full object-cover"
+            />
+            {/* Dark overlay for contrast */}
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+          </div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+            <span className="bg-[#9E0038] text-white text-xs font-extrabold uppercase px-4 py-1.5 rounded-full tracking-widest mb-4 shadow-lg border border-white/20">
+              PEP Mall München (Neuperlach)
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tight mb-4 drop-shadow-md">
+              Fresh. Fast. Feel-good.
+            </h2>
+            <p className="text-sm sm:text-base text-gray-200 max-w-xl mx-auto font-medium leading-relaxed drop-shadow">
+              Your favorite spot for warm golden crêpes, specialty coffees, and refreshing bubble teas & shakes during your shopping break.
             </p>
-            <div className="mt-6">
-              <span className="bg-white/10 text-white text-xs font-bold uppercase px-4 py-1.5 rounded-full tracking-wider border border-white/20">
-                Fresh. Fast. Feel-good
-              </span>
-            </div>
           </div>
         </section>
 
         {/* Info Cards (Address, Hours, Instagram, Contact) */}
-        <section className="max-w-5xl mx-auto px-6 -mt-8 relative z-10 mb-12">
+        <section className="max-w-5xl mx-auto px-6 -mt-10 relative z-20 mb-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-5 rounded-2xl shadow-md border border-gray-100">
               <p className="font-extrabold text-[#3D2314] mb-1 text-sm">📍 Address</p>
               <p className="text-xs text-gray-600">Thomas-Dehler-Straße 10<br />81737 München (PEP Mall)</p>
             </div>
-            <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+            <div className="bg-white p-5 rounded-2xl shadow-md border border-gray-100">
               <p className="font-extrabold text-[#3D2314] mb-1 text-sm">⏰ Opening Hours</p>
               <p className="text-xs text-gray-600">Mon – Sat: 10:00 – 20:00<br />Sundays: Closed</p>
             </div>
-            <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+            <div className="bg-white p-5 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
               <div>
                 <p className="font-extrabold text-[#3D2314] mb-1 text-sm">📸 Instagram</p>
-                <p className="text-xs text-gray-600">Follow our creations!</p>
+                <p className="text-xs text-gray-600">Follow our fresh creations!</p>
               </div>
               <a 
                 href="https://www.instagram.com/la.merienda_cafe" 
@@ -103,7 +115,7 @@ export default function Home() {
                 @la.merienda_cafe ➔
               </a>
             </div>
-            <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+            <div className="bg-white p-5 rounded-2xl shadow-md border border-gray-100 flex flex-col justify-between">
               <div>
                 <p className="font-extrabold text-[#3D2314] mb-1 text-sm">✉️ Contact</p>
                 <p className="text-xs text-gray-600">Get in touch with us</p>
