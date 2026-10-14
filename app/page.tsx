@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase/config";
+import { sendOrderEmail } from './actions';
+
+
 
 interface MenuItem {
   id: string;
@@ -186,6 +189,12 @@ export default function Home() {
     }
   };
 
+  await sendOrderEmail({
+    orderId: orderId, // or your generated order reference ID variable
+    total: total.toString(),
+    items: cart.map(i => `${i.name} (x${i.quantity})`).join(', ')
+  });
+  
   const filteredItems = menuItems.filter(item => item.category === activeCategory);
 
   return (
