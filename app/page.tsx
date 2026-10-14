@@ -47,21 +47,20 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#F9F6F0] text-[#1A1A1A] flex flex-col justify-between">
       <div>
-        {/* Navigation Bar with Official Logo */}
-        <header className="bg-[#9E0038] shadow-md sticky top-0 z-40 px-6 py-3 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <img src="/Logo La Merienda.png" alt="La Merienda Logo" className="h-9 w-auto bg-white p-1 rounded-lg" />
-            <span className="text-white font-black text-sm md:text-base tracking-wider hidden sm:inline">LA MERIENDA</span>
-          </div>
-          <a 
-            href="https://www.ubereats.com/de/store/la-merienda/S2fk516BWqCgS9XeyHb6Nw?srsltid=AU7gw4W0-1HEkjHBtzf66pM020AZ1m54te-g_sQPCg8C6n7zQVV0po9i" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-white text-green-700 px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-2 hover:bg-gray-100 transition-colors shadow-sm cursor-pointer"
-          >
-            <span>🛵 Order on Uber Eats</span>
-          </a>
-        </header>
+       {/* Navigation Bar with Official Logo only */}
+<header className="bg-[#9E0038] shadow-md sticky top-0 z-40 px-6 py-3 flex justify-between items-center">
+  <div className="flex items-center">
+    <img src="/Logo La Merienda.png" alt="La Merienda Logo" className="h-10 w-auto bg-white p-1 rounded-lg shadow-sm" />
+  </div>
+  <a 
+    href="https://www.ubereats.com/de/store/la-merienda/S2fk516BWqCgS9XeyHb6Nw?srsltid=AU7gw4W0-1HEkjHBtzf66pM020AZ1m54te-g_sQPCg8C6n7zQVV0po9i" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="bg-white text-green-700 px-4 py-2 rounded-xl font-bold text-xs flex items-center gap-2 hover:bg-gray-100 transition-colors shadow-sm cursor-pointer"
+  >
+    <span>🛵 Order on Uber Eats</span>
+  </a>
+</header>
 
         {/* Hero Section with Kiosk Background Image */}
         <section className="relative text-white py-24 sm:py-32 px-6 text-center overflow-hidden">
